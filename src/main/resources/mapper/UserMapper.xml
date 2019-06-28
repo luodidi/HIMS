@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhongruan.dao.IuserDao">
+    <select id="findAll" resultType="com.zhongruan.bean.UserInfo">
+       select * from tbl_user
+    </select>
+
+    <delete id="delete" parameterType="int">
+        delete from tbl_user where id=#{id}
+</delete>
+    <insert id="adduser" parameterType="com.zhongruan.bean.UserInfo">
+       insert into tbl_user(id,username,password) values (#{id},#{username},#{password})
+    </insert>
+
+    <update id="update" parameterType="com.zhongruan.bean.UserInfo">
+        UPDATE tbl_user
+        SET username =#{username},password =#{password}
+        WHERE id =#{id}
+    </update>
+
+    <select id="queryById" resultType="UserInfo" parameterType="int">
+        SELECT id,username,password
+        FROM tbl_user
+        WHERE id=#{id}
+    </select>
+
+
+</mapper>
+   
+
