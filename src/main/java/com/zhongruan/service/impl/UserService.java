@@ -24,6 +24,7 @@ public class UserService implements IuserService {
    public int adduser(UserInfo userInfo){
        return  userDao.adduser(userInfo);
    }
+   @Override
     public int update(UserInfo userInfo){
         return userDao.update(userInfo);
     }

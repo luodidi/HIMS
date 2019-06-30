@@ -27,19 +27,7 @@ public class UserController {
         return mv;
 
     }
-/*
-    @RequestMapping("/toAddUser.do")
-    public String addUser(){
-        return "addUser";
-    }
 
-//do是请求说明
-    @RequestMapping("/save.do")
-   public String addUser(UserInfo userInfo){
-        userService.adduser(userInfo);
-        return "redirect:findAll.do";
-    }
-*/
 
     @RequestMapping("/delete.do")
     public String delete(int id){
